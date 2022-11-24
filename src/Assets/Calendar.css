@@ -1,0 +1,23 @@
+.calendar-body {
+    width: fit-content;
+    margin: auto;
+}
+
+.calendar-header {
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+}
+
+.next-month {
+    color: grey;
+}
+
+.previous-month {
+    color: grey;
+}
+
+.today {
+    color: white;
+    background-color: red;
+}

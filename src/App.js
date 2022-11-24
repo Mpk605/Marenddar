@@ -1,24 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+
+// Context
+import { AppContextProvider } from './Context/Context';
+
+
+// React
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+
+
+// Pages
+import CalendarPage from './Pages/CalendarPage';
+import MeetFormPage from './Pages/MeetFormPage';
+import MeetListPage from './Pages/MeetListPage';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContextProvider>
+      <Routes>
+        <Route exact path="/" element={<CalendarPage />} />
+        <Route exact path="/meet_form" element={<MeetFormPage />} />
+        <Route exact path="/meet_list" element={<MeetListPage />} />
+      </Routes>
+    </AppContextProvider>
   );
 }
 
