@@ -55,7 +55,7 @@ function CalendarBody(props) {
         <tbody>
           {days.map((val) => {
             return <tr>{val.map((val) => {
-              return (<td className={(d.getDate() == val.value && d.getMonth() == props.month && d.getFullYear() == props.year) ? 'today ' : 'day ' + val.type}><a href={"/meet_list?date=" + val.value + "-" + props.month + "-" + props.year}>{val.value}</a></td>)
+              return (<td><a className={(d.getDate() == val.value && d.getMonth() == props.month && d.getFullYear() == props.year) ? 'today ' : '' + val.type} href={"/meet_list?date=" + props.year + "-" + (props.month + 1) + "-" + val.value}>{val.value}</a></td>)
             })}</tr>
           })}
         </tbody>
